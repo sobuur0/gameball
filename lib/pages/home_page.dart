@@ -29,14 +29,18 @@ class _HomepageState extends State<Homepage> {
                     ),
                   ],
                 ),
-                const Text.rich(TextSpan(children: [
+                const Text.rich(
                   TextSpan(
-                    text: 'Welcome to\n',
+                    children: [
+                      TextSpan(
+                        text: 'Welcome to\n',
+                      ),
+                      TextSpan(
+                        text: 'Plus Rewards',
+                      ),
+                    ],
                   ),
-                  TextSpan(
-                    text: 'Plus Rewards',
-                  ),
-                ]))
+                ),
               ],
             ),
           )
@@ -65,4 +69,3 @@ class _HomepageState extends State<Homepage> {
     );
   }
 }
-
