@@ -22,23 +22,7 @@ class _HomepageState extends State<Homepage> {
               children: <Widget>[
                 Row(
                   children: <Widget>[
-                    Container(
-                      decoration: const BoxDecoration(
-                        //TODO: change to required color
-                        color: Colors.yellowAccent,
-                      ),
-                      child: Row(
-                        children: const <Widget>[
-                          Icon(
-                            Icons.question_mark_rounded,
-                            color: Colors.black,
-                          ),
-                          Text(
-                            'FAQ',
-                          ),
-                        ],
-                      ),
-                    ),
+                    _buildFaqButton(),
                     const Icon(
                       Icons.cancel,
                       color: Colors.black,
@@ -60,4 +44,25 @@ class _HomepageState extends State<Homepage> {
       ),
     );
   }
+
+  Widget _buildFaqButton() {
+    return Container(
+      decoration: const BoxDecoration(
+        //TODO: change to required color
+        color: Colors.yellowAccent,
+      ),
+      child: Row(
+        children: const <Widget>[
+          Icon(
+            Icons.question_mark_rounded,
+            color: Colors.black,
+          ),
+          Text(
+            'FAQ',
+          ),
+        ],
+      ),
+    );
+  }
 }
+
