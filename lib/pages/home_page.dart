@@ -10,59 +10,80 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: <Widget>[
-          Container(
-            decoration: const BoxDecoration(
-              //TODO: change to required color
-              color: Colors.yellow,
-            ),
-            child: Column(
-              children: <Widget>[
-                Row(
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          height: 200.0,
+          decoration: const BoxDecoration(
+            //TODO: change to required color
+            color: Colors.yellow,
+          ),
+          child: Column(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12.0,
+                  vertical: 20.0,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     _buildFaqButton(),
                     const Icon(
                       Icons.cancel,
                       color: Colors.black,
+                      size: 40.0,
                     ),
                   ],
                 ),
-                const Text.rich(
-                  TextSpan(
-                    children: [
-                      TextSpan(
-                        text: 'Welcome to\n',
-                      ),
-                      TextSpan(
-                        text: 'Plus Rewards',
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          )
-        ],
+              ),
+              // const Text.rich(
+              //   TextSpan(
+              //     children: [
+              //       TextSpan(
+              //         text: 'Welcome to\n',
+              //       ),
+              //       TextSpan(
+              //         text: 'Plus Rewards',
+              //       ),
+              //     ],
+              //   ),
+              // ),
+            ],
+          ),
+        ),
       ),
     );
   }
 
   Widget _buildFaqButton() {
     return Container(
-      decoration: const BoxDecoration(
+      height: 40.0,
+      width: 70.0,
+      decoration: BoxDecoration(
         //TODO: change to required color
-        color: Colors.yellowAccent,
+        borderRadius: BorderRadius.circular(8.0),
+        color: Colors.white,
       ),
       child: Row(
-        children: const <Widget>[
-          Icon(
-            Icons.question_mark_rounded,
-            color: Colors.black,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: <Widget>[
+          Container(
+            decoration: ShapeDecoration(
+              color: Colors.black,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12.0),
+              ),
+            ),
+            child: const Icon(
+              Icons.question_mark_rounded,
+              color: Colors.white,
+              size: 20.0,
+            ),
           ),
-          Text(
+          const Text(
             'FAQ',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),
           ),
         ],
       ),
