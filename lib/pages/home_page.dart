@@ -116,6 +116,7 @@ class _HomepageState extends State<Homepage> {
             ),
             child: ElevatedButton(
               onPressed: () {},
+              //TODO: style this button
               child: const Text(
                 'Join Now',
                 style: TextStyle(
