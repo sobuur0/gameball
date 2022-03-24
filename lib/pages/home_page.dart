@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:gameball/widgets/action_card.dart';
 
@@ -9,6 +10,8 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  late GestureRecognizer _gestureRecognizer;
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -155,6 +158,7 @@ class _HomepageState extends State<Homepage> {
                   text: 'Already have an account?',
                 ),
                 TextSpan(
+                  //TODO: add oClick to this text
                   text: ' Sign In',
                   style: TextStyle(
                     color: Colors.yellow.shade600,
