@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 class ActionCard extends StatelessWidget {
-  const ActionCard({Key? key}) : super(key: key);
+  final String action;
+  final IconData actionIcon;
+
+  const ActionCard({
+    required this.action,
+    required this.actionIcon,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,22 +30,23 @@ class ActionCard extends StatelessWidget {
             children: <Widget>[
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const <Widget>[
-                  Icon(Icons.money),
-                  SizedBox(
+                children: <Widget>[
+                  const Icon(Icons.money),
+                  const SizedBox(
                     height: 10.0,
                   ),
                   Text(
-                    'Earn',
-                    style: TextStyle(
+                    action,
+                    style: const TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold,
                     ),
                   )
                 ],
               ),
-              const Icon(
-                Icons.cancel,
+              Icon(
+                actionIcon,
+                color: Colors.yellow.shade700,
               ),
             ],
           ),

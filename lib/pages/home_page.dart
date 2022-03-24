@@ -79,10 +79,16 @@ class _HomepageState extends State<Homepage> {
             Row(
               children: const [
                 Expanded(
-                  child: ActionCard(),
+                  child: ActionCard(
+                    action: 'Earn',
+                    actionIcon: Icons.cancel,
+                  ),
                 ),
                 Expanded(
-                  child: ActionCard(),
+                  child: ActionCard(
+                    action: 'Redeem',
+                    actionIcon: Icons.cancel,
+                  ),
                 ),
               ],
             ),
