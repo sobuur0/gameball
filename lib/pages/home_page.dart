@@ -14,57 +14,134 @@ class _HomepageState extends State<Homepage> {
 
     return SafeArea(
       child: Scaffold(
-        body: Container(
-          height: size.height*0.25,
-          decoration: BoxDecoration(
-            //TODO: change to required color
-            color: Colors.yellow.shade800,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 12.0,
-                  vertical: 20.0,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    _buildFaqButton(),
-                    const Icon(
-                      Icons.cancel,
-                      color: Colors.black,
-                      size: 40.0,
+        body: Stack(
+          children: <Widget>[
+            Container(
+              height: size.height * 0.25,
+              decoration: BoxDecoration(
+                //TODO: change to required color
+                color: Colors.yellow.shade800,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 12.0,
+                      vertical: 20.0,
                     ),
-                  ],
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        _buildFaqButton(),
+                        const Icon(
+                          Icons.cancel,
+                          color: Colors.black,
+                          size: 40.0,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 12.0,
+                    ),
+                    child: Text.rich(
+                      TextSpan(
+                        children: [
+                          TextSpan(
+                            text: 'Welcome to\n',
+                            style: TextStyle(fontSize: 14.0),
+                          ),
+                          TextSpan(
+                            text: 'Plus Rewards',
+                            style: TextStyle(
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20.0, 170.0, 20.0, 0),
+              child: _buildSignupCard(size),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSignupCard(Size size) {
+    return Container(
+      height: size.height * 0.35,
+      width: size.width * 0.9,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+      child: Column(
+        children: <Widget>[
+          const Padding(
+            padding: EdgeInsets.symmetric(
+              vertical: 20.0,
+            ),
+            child: Text(
+              'Signup now and join our\n rewards program!',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 18.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 10.0,
+            ),
+            child: Image.asset(
+              'images/testAsset.png',
+              height: 70.0,
+              color: Colors.yellow.shade800,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 10.0,
+            ),
+            child: ElevatedButton(
+              onPressed: () {},
+              child: const Text(
+                'Join Now',
+                style: TextStyle(
+                  fontSize: 12.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 12.0,),
-                child: Text.rich(
-                  TextSpan(
-                    children: [
-                      TextSpan(
-                        text: 'Welcome to\n',
-                        style: TextStyle(
-                          fontSize: 14.0
-                        ),
-                      ),
-                      TextSpan(
-                        text: 'Plus Rewards',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
+            ),
+          ),
+          Text.rich(
+            TextSpan(
+              children: [
+                const TextSpan(
+                  text: 'Already have an account?',
+                ),
+                TextSpan(
+                  text: ' Sign In',
+                  style: TextStyle(
+                    color: Colors.yellow.shade600,
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
@@ -76,7 +153,7 @@ class _HomepageState extends State<Homepage> {
       decoration: BoxDecoration(
         //TODO: change to required color
         borderRadius: BorderRadius.circular(8.0),
-        color: Colors.yellow.shade700,
+        color: Colors.yellow.shade600,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
