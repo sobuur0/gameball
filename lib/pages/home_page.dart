@@ -18,84 +18,159 @@ class _HomepageState extends State<Homepage> {
 
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          children: <Widget>[
-            Stack(
-              children: <Widget>[
-                Container(
-                  height: size.height * 0.25,
-                  decoration: BoxDecoration(
-                    //TODO: change to required color
-                    color: Colors.yellow.shade800,
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Stack(
+                children: <Widget>[
+                  Container(
+                    height: size.height * 0.25,
+                    decoration: BoxDecoration(
+                      //TODO: change to required color
+                      color: Colors.yellow.shade800,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 12.0,
+                            vertical: 20.0,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              _buildFaqButton(),
+                              const Icon(
+                                Icons.cancel,
+                                color: Colors.black,
+                                size: 40.0,
+                              ),
+                            ],
+                          ),
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 12.0,
+                          ),
+                          child: Text.rich(
+                            TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: 'Welcome to\n',
+                                  style: TextStyle(fontSize: 14.0),
+                                ),
+                                TextSpan(
+                                  text: 'Plus Rewards',
+                                  style: TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20.0, 170.0, 20.0, 0),
+                    child: _buildSignupCard(size),
+                  ),
+                ],
+              ),
+              Row(
+                children: const <Widget>[
+                  Expanded(
+                    child: ActionCard(
+                      action: 'Earn',
+                      actionIcon: Icons.chevron_right,
+                    ),
+                  ),
+                  Expanded(
+                    child: ActionCard(
+                      action: 'Redeem',
+                      actionIcon: Icons.chevron_right,
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20.0, 0, 20.0, 20.0),
+                child: Container(
+                  height: size.height * 0.15,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12.0),
+                    color: Colors.white,
+                  ),
+                  child: Stack(
                     children: <Widget>[
+                      const Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 20.0,
+                          vertical: 30.0,
+                        ),
+                        child: Icon(Icons.account_balance),
+                      ),
                       Padding(
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 12.0,
-                          vertical: 20.0,
+                          horizontal: 20.0,
+                          vertical: 30.0,
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
-                            _buildFaqButton(),
-                            const Icon(
-                              Icons.cancel,
-                              color: Colors.black,
-                              size: 40.0,
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                left: 60.0,
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: const <Widget>[
+                                  Text(
+                                    'Levels',
+                                    style: TextStyle(
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 5.0,
+                                  ),
+                                  Text(
+                                    'Collect discount\n points and level up!',
+                                  ),
+                                ],
+                              ),
                             ),
+                            Icon(
+                              Icons.chevron_right,
+                              color: Colors.yellow.shade700,
+                            )
                           ],
-                        ),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 12.0,
-                        ),
-                        child: Text.rich(
-                          TextSpan(
-                            children: [
-                              TextSpan(
-                                text: 'Welcome to\n',
-                                style: TextStyle(fontSize: 14.0),
-                              ),
-                              TextSpan(
-                                text: 'Plus Rewards',
-                                style: TextStyle(
-                                  fontSize: 18.0,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
                         ),
                       ),
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20.0, 170.0, 20.0, 0),
-                  child: _buildSignupCard(size),
-                ),
-              ],
-            ),
-            Row(
-              children: const [
-                Expanded(
-                  child: ActionCard(
-                    action: 'Earn',
-                    actionIcon: Icons.cancel,
-                  ),
-                ),
-                Expanded(
-                  child: ActionCard(
-                    action: 'Redeem',
-                    actionIcon: Icons.cancel,
-                  ),
-                ),
-              ],
-            ),
-          ],
+              ),
+            ],
+          ),
+        ),
+        bottomNavigationBar: Container(
+          height: 40.0,
+          decoration: const BoxDecoration(
+            color: Colors.white,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const <Widget>[
+              Text('Powered by'),
+              // Image.asset(),
+              Text(' Gameball'),
+            ],
+          ),
         ),
       ),
     );
