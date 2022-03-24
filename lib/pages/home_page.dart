@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gameball/widgets/action_card.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -14,62 +16,76 @@ class _HomepageState extends State<Homepage> {
 
     return SafeArea(
       child: Scaffold(
-        body: Stack(
+        body: Column(
           children: <Widget>[
-            Container(
-              height: size.height * 0.25,
-              decoration: BoxDecoration(
-                //TODO: change to required color
-                color: Colors.yellow.shade800,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 12.0,
-                      vertical: 20.0,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        _buildFaqButton(),
-                        const Icon(
-                          Icons.cancel,
-                          color: Colors.black,
-                          size: 40.0,
+            Stack(
+              children: <Widget>[
+                Container(
+                  height: size.height * 0.25,
+                  decoration: BoxDecoration(
+                    //TODO: change to required color
+                    color: Colors.yellow.shade800,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 12.0,
+                          vertical: 20.0,
                         ),
-                      ],
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 12.0,
-                    ),
-                    child: Text.rich(
-                      TextSpan(
-                        children: [
-                          TextSpan(
-                            text: 'Welcome to\n',
-                            style: TextStyle(fontSize: 14.0),
-                          ),
-                          TextSpan(
-                            text: 'Plus Rewards',
-                            style: TextStyle(
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.bold,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            _buildFaqButton(),
+                            const Icon(
+                              Icons.cancel,
+                              color: Colors.black,
+                              size: 40.0,
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 12.0,
+                        ),
+                        child: Text.rich(
+                          TextSpan(
+                            children: [
+                              TextSpan(
+                                text: 'Welcome to\n',
+                                style: TextStyle(fontSize: 14.0),
+                              ),
+                              TextSpan(
+                                text: 'Plus Rewards',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20.0, 170.0, 20.0, 0),
+                  child: _buildSignupCard(size),
+                ),
+              ],
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20.0, 170.0, 20.0, 0),
-              child: _buildSignupCard(size),
+            Row(
+              children: const [
+                Expanded(
+                  child: ActionCard(),
+                ),
+                Expanded(
+                  child: ActionCard(),
+                ),
+              ],
             ),
           ],
         ),
