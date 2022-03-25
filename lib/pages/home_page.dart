@@ -1,7 +1,7 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:gameball/constants.dart';
 import 'package:gameball/widgets/action_card.dart';
+import 'package:gameball/widgets/dashboard_card.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -11,8 +11,6 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  late GestureRecognizer _gestureRecognizer;
-
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -24,56 +22,7 @@ class _HomepageState extends State<Homepage> {
             children: <Widget>[
               Stack(
                 children: <Widget>[
-                  Container(
-                    height: size.height * 0.20,
-                    decoration: const BoxDecoration(
-                      color: kDashboardColor,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 12.0,
-                            vertical: 20.0,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              _buildFaqButton(),
-                              const Icon(
-                                Icons.cancel_outlined,
-                                color: Colors.black,
-                                size: 30.0,
-                              ),
-                            ],
-                          ),
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 12.0,
-                          ),
-                          child: Text.rich(
-                            TextSpan(
-                              children: [
-                                TextSpan(
-                                  text: 'Welcome to\n',
-                                  style: TextStyle(fontSize: 14.0),
-                                ),
-                                TextSpan(
-                                  text: 'Plus Rewards',
-                                  style: TextStyle(
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  const DashBoardCard(),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(20.0, 130.0, 20.0, 0),
                     child: _buildSignupCard(size),
@@ -81,6 +30,7 @@ class _HomepageState extends State<Homepage> {
                 ],
               ),
               Row(
+                //TODO: replace both card with correct icons
                 children: const <Widget>[
                   Expanded(
                     child: ActionCard(
@@ -111,7 +61,10 @@ class _HomepageState extends State<Homepage> {
                           horizontal: 20.0,
                           vertical: 30.0,
                         ),
-                        child: Icon(Icons.account_balance),
+                        child: Icon(
+                          //TODO: replace icon with correct one
+                          Icons.account_balance,
+                        ),
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(
@@ -203,6 +156,7 @@ class _HomepageState extends State<Homepage> {
             padding: const EdgeInsets.symmetric(
               vertical: 10.0,
             ),
+            //TODO: replace this with correct asset
             child: Image.asset(
               'images/testAsset.png',
               height: 70.0,
@@ -215,7 +169,7 @@ class _HomepageState extends State<Homepage> {
             ),
             child: ElevatedButton(
               onPressed: () {},
-              //TODO: style this button
+              //TODO: style this button to match ui
               child: const Text(
                 'Join Now',
                 style: TextStyle(
@@ -241,42 +195,6 @@ class _HomepageState extends State<Homepage> {
                 ),
               ],
             ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildFaqButton() {
-    return Container(
-      height: 30.0,
-      width: 60.0,
-      decoration: BoxDecoration(
-        //TODO: change to required color
-        borderRadius: BorderRadius.circular(8.0),
-        color: const Color(0xFFECC246),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Container(
-            height: 20.0,
-            width: 20.0,
-            decoration: ShapeDecoration(
-              color: Colors.black,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12.0),
-              ),
-            ),
-            child: const Icon(
-              Icons.question_mark_rounded,
-              color: Colors.white,
-              size: 12.0,
-            ),
-          ),
-          const Text(
-            'FAQ',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),
           ),
         ],
       ),
