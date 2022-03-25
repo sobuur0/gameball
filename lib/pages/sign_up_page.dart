@@ -3,14 +3,14 @@ import 'package:gameball/constants.dart';
 import 'package:gameball/widgets/action_card.dart';
 import 'package:gameball/widgets/dashboard_card.dart';
 
-class Homepage extends StatefulWidget {
-  const Homepage({Key? key}) : super(key: key);
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({Key? key}) : super(key: key);
 
   @override
-  _HomepageState createState() => _HomepageState();
+  _SignUpPageState createState() => _SignUpPageState();
 }
 
-class _HomepageState extends State<Homepage> {
+class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
