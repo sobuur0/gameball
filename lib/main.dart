@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gameball/constants.dart';
 import 'package:gameball/pages/home_page.dart';
 
 void main() {
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        scaffoldBackgroundColor: kScaffoldBackgroundColor,
         primarySwatch: Colors.blue,
       ),
       home: const Homepage(),

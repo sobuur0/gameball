@@ -25,7 +25,7 @@ class _HomepageState extends State<Homepage> {
               Stack(
                 children: <Widget>[
                   Container(
-                    height: size.height * 0.25,
+                    height: size.height * 0.20,
                     decoration: const BoxDecoration(
                       color: kDashboardColor,
                     ),
@@ -42,9 +42,9 @@ class _HomepageState extends State<Homepage> {
                             children: <Widget>[
                               _buildFaqButton(),
                               const Icon(
-                                Icons.cancel,
+                                Icons.cancel_outlined,
                                 color: Colors.black,
-                                size: 40.0,
+                                size: 30.0,
                               ),
                             ],
                           ),
@@ -75,7 +75,7 @@ class _HomepageState extends State<Homepage> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(20.0, 170.0, 20.0, 0),
+                    padding: const EdgeInsets.fromLTRB(20.0, 130.0, 20.0, 0),
                     child: _buildSignupCard(size),
                   ),
                 ],
@@ -181,7 +181,7 @@ class _HomepageState extends State<Homepage> {
       height: size.height * 0.35,
       width: size.width * 0.9,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: kCardColor,
         borderRadius: BorderRadius.circular(12.0),
       ),
       child: Column(
@@ -249,7 +249,7 @@ class _HomepageState extends State<Homepage> {
 
   Widget _buildFaqButton() {
     return Container(
-      height: 40.0,
+      height: 30.0,
       width: 60.0,
       decoration: BoxDecoration(
         //TODO: change to required color
@@ -257,9 +257,11 @@ class _HomepageState extends State<Homepage> {
         color: const Color(0xFFECC246),
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Container(
+            height: 20.0,
+            width: 20.0,
             decoration: ShapeDecoration(
               color: Colors.black,
               shape: RoundedRectangleBorder(
@@ -269,7 +271,7 @@ class _HomepageState extends State<Homepage> {
             child: const Icon(
               Icons.question_mark_rounded,
               color: Colors.white,
-              size: 20.0,
+              size: 12.0,
             ),
           ),
           const Text(

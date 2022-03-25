@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gameball/constants.dart';
 
 class ActionCard extends StatelessWidget {
   final String action;
@@ -20,7 +21,7 @@ class ActionCard extends StatelessWidget {
       child: Container(
         height: 150,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: kCardColor,
           borderRadius: BorderRadius.circular(12.0),
         ),
         child: Padding(
