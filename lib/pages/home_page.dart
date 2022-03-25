@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:gameball/constants.dart';
 import 'package:gameball/widgets/action_card.dart';
 
 class Homepage extends StatefulWidget {
@@ -25,9 +26,8 @@ class _HomepageState extends State<Homepage> {
                 children: <Widget>[
                   Container(
                     height: size.height * 0.25,
-                    decoration: BoxDecoration(
-                      //TODO: change to required color
-                      color: Colors.yellow.shade800,
+                    decoration: const BoxDecoration(
+                      color: kDashboardColor,
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -206,7 +206,7 @@ class _HomepageState extends State<Homepage> {
             child: Image.asset(
               'images/testAsset.png',
               height: 70.0,
-              color: Colors.yellow.shade800,
+              color: const Color(0xFFF6B74F),
             ),
           ),
           Padding(
@@ -254,7 +254,7 @@ class _HomepageState extends State<Homepage> {
       decoration: BoxDecoration(
         //TODO: change to required color
         borderRadius: BorderRadius.circular(8.0),
-        color: Colors.yellow.shade600,
+        color: const Color(0xFFECC246),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
