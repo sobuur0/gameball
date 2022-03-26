@@ -35,13 +35,13 @@ class _SignUpPageState extends State<SignUpPage> {
                   Expanded(
                     child: ActionCard(
                       action: 'Earn',
-                      actionIcon: Icons.chevron_right,
+                      actionIcon: Icons.clean_hands,
                     ),
                   ),
                   Expanded(
                     child: ActionCard(
                       action: 'Redeem',
-                      actionIcon: Icons.chevron_right,
+                      actionIcon: Icons.redeem,
                     ),
                   ),
                 ],

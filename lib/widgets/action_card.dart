@@ -32,7 +32,7 @@ class ActionCard extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  const Icon(Icons.money),
+                  Icon(actionIcon),
                   const SizedBox(
                     height: 10.0,
                   ),
@@ -46,7 +46,7 @@ class ActionCard extends StatelessWidget {
                 ],
               ),
               Icon(
-                actionIcon,
+                Icons.chevron_right,
                 color: Colors.yellow.shade700,
               ),
             ],

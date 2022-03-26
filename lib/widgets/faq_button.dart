@@ -9,9 +9,8 @@ class FAQButton extends StatelessWidget {
       height: 30.0,
       width: 60.0,
       decoration: BoxDecoration(
-        //TODO: change to required color
         borderRadius: BorderRadius.circular(8.0),
-        color: const Color(0xFFECC246),
+        color: const Color(0xFFEDC143),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
