@@ -30,12 +30,11 @@ class _SignUpPageState extends State<SignUpPage> {
                 ],
               ),
               Row(
-                //TODO: replace both card with correct icons
                 children: const <Widget>[
                   Expanded(
                     child: ActionCard(
                       action: 'Earn',
-                      actionIcon: Icons.clean_hands,
+                      actionIcon: Icons.volunteer_activism,
                     ),
                   ),
                   Expanded(
@@ -62,8 +61,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           vertical: 30.0,
                         ),
                         child: Icon(
-                          //TODO: replace icon with correct one
-                          Icons.account_balance,
+                          Icons.line_style,
                         ),
                       ),
                       Padding(
@@ -164,7 +162,7 @@ class _SignUpPageState extends State<SignUpPage> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(
+            padding:  const EdgeInsets.symmetric(
               vertical: 10.0,
             ),
             child: ElevatedButton(

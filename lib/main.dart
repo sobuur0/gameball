@@ -15,6 +15,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            fixedSize: MaterialStateProperty.all<Size>(
+              const Size(
+                100,
+                40,
+              ),
+            ),
+            backgroundColor: MaterialStateProperty.all<Color>(
+              const Color(0xFFF9CD4E),
+            ),
+          ),
+        ),
         scaffoldBackgroundColor: kScaffoldBackgroundColor,
         primarySwatch: Colors.blue,
       ),
