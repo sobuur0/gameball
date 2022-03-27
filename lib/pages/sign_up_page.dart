@@ -11,6 +11,31 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  // late GestureRecognizer _gestureRecognizer;
+  //
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   _gestureRecognizer = TapGestureRecognizer()
+  //     ..onTap = _handleSignIn() as GestureTapCallback?;
+  // }
+  //
+  // @override
+  // void dispose() {
+  //   _gestureRecognizer.dispose();
+  //   super.dispose();
+  // }
+  //
+  // Future _handleSignIn() {
+  //   HapticFeedback.vibrate();
+  //   return Navigator.push(
+  //     context,
+  //     MaterialPageRoute(
+  //       builder: (context) => const HomePage(),
+  //     ),
+  //   );
+  // }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -30,18 +55,27 @@ class _SignUpPageState extends State<SignUpPage> {
                 ],
               ),
               Row(
-                //TODO: replace both card with correct icons
                 children: const <Widget>[
                   Expanded(
-                    child: ActionCard(
-                      action: 'Earn',
-                      actionIcon: Icons.clean_hands,
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        left: 10.0,
+                      ),
+                      child: ActionCard(
+                        action: 'Earn',
+                        actionIcon: Icons.volunteer_activism,
+                      ),
                     ),
                   ),
                   Expanded(
-                    child: ActionCard(
-                      action: 'Redeem',
-                      actionIcon: Icons.redeem,
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        right: 10.0,
+                      ),
+                      child: ActionCard(
+                        action: 'Redeem',
+                        actionIcon: Icons.redeem,
+                      ),
                     ),
                   ),
                 ],
@@ -58,12 +92,11 @@ class _SignUpPageState extends State<SignUpPage> {
                     children: <Widget>[
                       const Padding(
                         padding: EdgeInsets.symmetric(
-                          horizontal: 20.0,
+                          horizontal: 10.0,
                           vertical: 30.0,
                         ),
                         child: Icon(
-                          //TODO: replace icon with correct one
-                          Icons.account_balance,
+                          Icons.line_style,
                         ),
                       ),
                       Padding(
@@ -76,7 +109,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           children: <Widget>[
                             Padding(
                               padding: const EdgeInsets.only(
-                                left: 60.0,
+                                left: 40.0,
                               ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -169,7 +202,6 @@ class _SignUpPageState extends State<SignUpPage> {
             ),
             child: ElevatedButton(
               onPressed: () {},
-              //TODO: style this button to match ui
               child: const Text(
                 'Join Now',
                 style: TextStyle(
@@ -187,7 +219,6 @@ class _SignUpPageState extends State<SignUpPage> {
                   text: 'Already have an account?',
                 ),
                 TextSpan(
-                  //TODO: add oClick to this text
                   text: ' Sign In',
                   style: TextStyle(
                     color: Colors.yellow.shade600,
