@@ -11,7 +11,6 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-
   // late GestureRecognizer _gestureRecognizer;
   //
   // @override
@@ -58,15 +57,25 @@ class _SignUpPageState extends State<SignUpPage> {
               Row(
                 children: const <Widget>[
                   Expanded(
-                    child: ActionCard(
-                      action: 'Earn',
-                      actionIcon: Icons.volunteer_activism,
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        left: 10.0,
+                      ),
+                      child: ActionCard(
+                        action: 'Earn',
+                        actionIcon: Icons.volunteer_activism,
+                      ),
                     ),
                   ),
                   Expanded(
-                    child: ActionCard(
-                      action: 'Redeem',
-                      actionIcon: Icons.redeem,
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        right: 10.0,
+                      ),
+                      child: ActionCard(
+                        action: 'Redeem',
+                        actionIcon: Icons.redeem,
+                      ),
                     ),
                   ),
                 ],
