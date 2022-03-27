@@ -92,7 +92,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     children: <Widget>[
                       const Padding(
                         padding: EdgeInsets.symmetric(
-                          horizontal: 20.0,
+                          horizontal: 10.0,
                           vertical: 30.0,
                         ),
                         child: Icon(
@@ -109,7 +109,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           children: <Widget>[
                             Padding(
                               padding: const EdgeInsets.only(
-                                left: 60.0,
+                                left: 40.0,
                               ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
