@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gameball/constants.dart';
+import 'package:gameball/widgets/action_widget.dart';
 import 'package:gameball/widgets/dashboard_card.dart';
 
 class HomePage extends StatefulWidget {
@@ -26,7 +27,8 @@ class _HomePageState extends State<HomePage> {
                   child: _pointsContainer(size),
                 ),
               ],
-            )
+            ),
+            const ActionWidget(),
           ],
         ),
       ),
@@ -62,7 +64,9 @@ class _HomePageState extends State<HomePage> {
             const Spacer(),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(left: 35.0,),
+                padding: const EdgeInsets.only(
+                  left: 35.0,
+                ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,

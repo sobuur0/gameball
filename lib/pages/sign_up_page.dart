@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gameball/constants.dart';
 import 'package:gameball/pages/home_page.dart';
-import 'package:gameball/widgets/action_card.dart';
+import 'package:gameball/widgets/action_widget.dart';
 import 'package:gameball/widgets/dashboard_card.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -55,32 +55,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ],
               ),
-              Row(
-                children: const <Widget>[
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        left: 10.0,
-                      ),
-                      child: ActionCard(
-                        action: 'Earn',
-                        actionIcon: Icons.volunteer_activism,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        right: 10.0,
-                      ),
-                      child: ActionCard(
-                        action: 'Redeem',
-                        actionIcon: Icons.redeem,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              const ActionWidget(),
               Padding(
                 padding: const EdgeInsets.fromLTRB(20.0, 0, 20.0, 20.0),
                 child: Container(
