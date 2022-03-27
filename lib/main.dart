@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
           style: ButtonStyle(
             fixedSize: MaterialStateProperty.all<Size>(
               const Size(
-                100,
-                40,
+                100.0,
+                30.0,
               ),
             ),
             backgroundColor: MaterialStateProperty.all<Color>(

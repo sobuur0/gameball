@@ -27,9 +27,8 @@ class DashBoardCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const <Widget>[
                 FAQButton(),
-                //TODO: replace this with correct icon
                 Icon(
-                  Icons.cancel_outlined,
+                  Icons.clear,
                   color: Colors.black,
                   size: 30.0,
                 ),

@@ -11,6 +11,32 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+
+  // late GestureRecognizer _gestureRecognizer;
+  //
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   _gestureRecognizer = TapGestureRecognizer()
+  //     ..onTap = _handleSignIn() as GestureTapCallback?;
+  // }
+  //
+  // @override
+  // void dispose() {
+  //   _gestureRecognizer.dispose();
+  //   super.dispose();
+  // }
+  //
+  // Future _handleSignIn() {
+  //   HapticFeedback.vibrate();
+  //   return Navigator.push(
+  //     context,
+  //     MaterialPageRoute(
+  //       builder: (context) => const HomePage(),
+  //     ),
+  //   );
+  // }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -162,12 +188,11 @@ class _SignUpPageState extends State<SignUpPage> {
             ),
           ),
           Padding(
-            padding:  const EdgeInsets.symmetric(
+            padding: const EdgeInsets.symmetric(
               vertical: 10.0,
             ),
             child: ElevatedButton(
               onPressed: () {},
-              //TODO: style this button to match ui
               child: const Text(
                 'Join Now',
                 style: TextStyle(
@@ -185,7 +210,6 @@ class _SignUpPageState extends State<SignUpPage> {
                   text: 'Already have an account?',
                 ),
                 TextSpan(
-                  //TODO: add oClick to this text
                   text: ' Sign In',
                   style: TextStyle(
                     color: Colors.yellow.shade600,
