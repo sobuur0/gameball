@@ -17,15 +17,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(
-            fixedSize: MaterialStateProperty.all<Size>(
-              const Size(
-                100.0,
-                30.0,
-              ),
-            ),
-            backgroundColor: MaterialStateProperty.all<Color>(
-              const Color(0xFFF9CD4E),
-            ),
+            fixedSize: MaterialStateProperty.all<Size>(kElevatedButtonSize),
+            backgroundColor: MaterialStateProperty.all<Color>(kElevatedButtonColor),
           ),
         ),
         scaffoldBackgroundColor: kScaffoldBackgroundColor,

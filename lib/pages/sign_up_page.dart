@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gameball/constants.dart';
+import 'package:gameball/pages/home_page.dart';
 import 'package:gameball/widgets/action_card.dart';
 import 'package:gameball/widgets/dashboard_card.dart';
 
@@ -201,7 +202,14 @@ class _SignUpPageState extends State<SignUpPage> {
               vertical: 10.0,
             ),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const HomePage(),
+                  ),
+                );
+              },
               child: const Text(
                 'Join Now',
                 style: TextStyle(

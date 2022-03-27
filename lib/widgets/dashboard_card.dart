@@ -4,7 +4,12 @@ import 'package:gameball/widgets/faq_button.dart';
 import '../constants.dart';
 
 class DashBoardCard extends StatelessWidget {
-  const DashBoardCard({Key? key}) : super(key: key);
+  final VoidCallback? onCancel;
+
+  const DashBoardCard({
+    this.onCancel,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +30,15 @@ class DashBoardCard extends StatelessWidget {
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const <Widget>[
-                FAQButton(),
-                Icon(
-                  Icons.clear,
-                  color: Colors.black,
-                  size: 30.0,
+              children: <Widget>[
+                const FAQButton(),
+                InkWell(
+                  onTap: onCancel,
+                  child: const Icon(
+                    Icons.clear,
+                    color: Colors.black,
+                    size: 30.0,
+                  ),
                 ),
               ],
             ),
