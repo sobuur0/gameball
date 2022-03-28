@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gameball/constants.dart';
 import 'package:gameball/widgets/action_widget.dart';
+import 'package:gameball/widgets/copy_button.dart';
 import 'package:gameball/widgets/dashboard_card.dart';
 import 'package:gameball/widgets/referral_bonus.dart';
 import 'package:percent_indicator/percent_indicator.dart';
@@ -255,8 +256,14 @@ class _HomePageState extends State<HomePage> {
   //TODO: Complete this container
   Widget _copyReferralContainer() {
     return Row(
-      children: [
-        Container(),
+      children: const [
+        TextField(
+          decoration: InputDecoration(
+            border: OutlineInputBorder(),
+            labelText: 'iwndx',
+          ),
+        ),
+        CopyButton(),
       ],
     );
   }
