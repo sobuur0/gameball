@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gameball/constants.dart';
 import 'package:gameball/widgets/action_widget.dart';
 import 'package:gameball/widgets/dashboard_card.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -11,6 +12,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  double value = 1090.0;
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -29,6 +32,55 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const ActionWidget(),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20.0,
+              ),
+              child: _levelsContainer(size),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Container(
+                height: size.height * 0.25,
+                decoration: BoxDecoration(
+                  color: kCardColor,
+                  borderRadius: BorderRadius.circular(12.0),
+                ),
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          const Text(
+                            'Refer Your Friends',
+                            style: TextStyle(
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Icon(
+                            Icons.chevron_right,
+                            color: Colors.yellow.shade700,
+                          ),
+                        ],
+                      ),
+                    ),
+                    // Text(),
+                    // Text(),
+                    // _copyReferralContainer(),
+                    // Text(),
+                    // Row(
+                    //   children: [
+                    //     Icon(),
+                    //     Icon(),
+                    //   ],
+                    // ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -92,6 +144,86 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
+    );
+  }
+
+  Widget _levelsContainer(Size size) {
+    return Container(
+      height: size.height * 0.15,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12.0),
+        color: kCardColor,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 10.0,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            const Icon(Icons.line_style),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                const Text.rich(
+                  TextSpan(
+                    children: [
+                      TextSpan(
+                        text: 'Gold',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18.0,
+                        ),
+                      ),
+                      TextSpan(
+                        text: ' (level 3)',
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 15.0,
+                ),
+                const Text(
+                  '1090 Points to Gold',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8.0,
+                ),
+                LinearPercentIndicator(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 0.0,
+                  ),
+                  percent: 0.2,
+                  progressColor: kProgressIndicatorColor,
+                  lineHeight: 6.0,
+                  width: 200.0,
+                  backgroundColor: kProgressIndicatorBackgroundColor,
+                  barRadius: const Radius.circular(5.0),
+                ),
+              ],
+            ),
+            Icon(
+              Icons.chevron_right,
+              color: Colors.yellow.shade700,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+
+  Widget _copyReferralContainer() {
+    return Row(
+      children: [
+        Container(),
+
+      ],
     );
   }
 }

@@ -3,7 +3,9 @@ import 'package:gameball/constants.dart';
 import 'package:gameball/pages/sign_up_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -18,7 +20,8 @@ class MyApp extends StatelessWidget {
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(
             fixedSize: MaterialStateProperty.all<Size>(kElevatedButtonSize),
-            backgroundColor: MaterialStateProperty.all<Color>(kElevatedButtonColor),
+            backgroundColor:
+                MaterialStateProperty.all<Color>(kElevatedButtonColor),
           ),
         ),
         scaffoldBackgroundColor: kScaffoldBackgroundColor,
