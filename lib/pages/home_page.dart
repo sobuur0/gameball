@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gameball/constants.dart';
 import 'package:gameball/widgets/action_widget.dart';
 import 'package:gameball/widgets/dashboard_card.dart';
+import 'package:gameball/widgets/referral_bonus.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class HomePage extends StatefulWidget {
@@ -47,9 +48,13 @@ class _HomePageState extends State<HomePage> {
                   borderRadius: BorderRadius.circular(12.0),
                 ),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10.0,
+                        vertical: 20.0,
+                      ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
@@ -67,16 +72,46 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-                    // Text(),
-                    // Text(),
-                    // _copyReferralContainer(),
-                    // Text(),
-                    // Row(
-                    //   children: [
-                    //     Icon(),
-                    //     Icon(),
-                    //   ],
-                    // ),
+                    const ReferralBonus(
+                      owner: 'You get',
+                      bonus: ' \$20 Coupon',
+                    ),
+                    const ReferralBonus(
+                      owner: 'They get',
+                      bonus: ' Free Shipping Coupon',
+                    ),
+                    _copyReferralContainer(),
+                    const Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: Text(
+                        'You have referred 0 friends',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    const Spacer(),
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: const <Widget>[
+                          Icon(
+                            Icons.facebook,
+                            color: Colors.yellow,
+                            size: 30.0,
+                          ),
+                          SizedBox(
+                            width: 30.0,
+                          ),
+                          Icon(
+                            Icons.snapchat,
+                            color: Colors.yellow,
+                            size: 30.0,
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -217,12 +252,11 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-
+  //TODO: Complete this container
   Widget _copyReferralContainer() {
     return Row(
       children: [
         Container(),
-
       ],
     );
   }
