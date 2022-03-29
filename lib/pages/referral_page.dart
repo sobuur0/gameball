@@ -12,13 +12,16 @@ class _ReferralPageState extends State<ReferralPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         centerTitle: true,
         leading: const Icon(
           Icons.arrow_back,
+          color: Colors.black,
         ),
         title: const Text(
           'Referral',
           style: TextStyle(
+            color: Colors.black,
             fontWeight: FontWeight.bold,
             fontSize: 18.0,
           ),

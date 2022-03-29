@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gameball/constants.dart';
+import 'package:gameball/pages/referral_page.dart';
 import 'package:gameball/widgets/action_widget.dart';
 import 'package:gameball/widgets/copy_button.dart';
 import 'package:gameball/widgets/dashboard_card.dart';
@@ -68,9 +69,19 @@ class _HomePageState extends State<HomePage> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          Icon(
-                            Icons.chevron_right,
-                            color: Colors.yellow.shade700,
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const ReferralPage(),
+                                ),
+                              );
+                            },
+                            child: Icon(
+                              Icons.chevron_right,
+                              color: Colors.yellow.shade700,
+                            ),
                           ),
                         ],
                       ),
