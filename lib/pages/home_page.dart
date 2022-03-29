@@ -15,6 +15,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   double value = 1090.0;
+
   // late TextEditingController _referralTextController;
 
   @override
@@ -78,12 +79,16 @@ class _HomePageState extends State<HomePage> {
                       owner: 'You get',
                       bonus: ' \$20 Coupon',
                     ),
-                    const SizedBox(height: 5.0,),
+                    const SizedBox(
+                      height: 5.0,
+                    ),
                     const ReferralBonus(
                       owner: 'They get',
                       bonus: ' Free Shipping Coupon',
                     ),
-                    const SizedBox(height: 8.0,),
+                    const SizedBox(
+                      height: 8.0,
+                    ),
                     _copyReferralContainer(),
                     const Padding(
                       padding: EdgeInsets.symmetric(
@@ -99,9 +104,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     const Spacer(),
                     Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 10.0
-                      ),
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: const <Widget>[
@@ -261,7 +264,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  //TODO: Complete this container
   Widget _copyReferralContainer() {
     return Padding(
       padding: const EdgeInsets.all(10.0),
