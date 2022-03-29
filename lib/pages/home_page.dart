@@ -15,6 +15,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   double value = 1090.0;
+  // late TextEditingController _referralTextController;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +44,7 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Container(
-                height: size.height * 0.25,
+                height: size.height * 0.3,
                 decoration: BoxDecoration(
                   color: kCardColor,
                   borderRadius: BorderRadius.circular(12.0),
@@ -77,13 +78,18 @@ class _HomePageState extends State<HomePage> {
                       owner: 'You get',
                       bonus: ' \$20 Coupon',
                     ),
+                    const SizedBox(height: 5.0,),
                     const ReferralBonus(
                       owner: 'They get',
                       bonus: ' Free Shipping Coupon',
                     ),
+                    const SizedBox(height: 8.0,),
                     _copyReferralContainer(),
                     const Padding(
-                      padding: EdgeInsets.all(10.0),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 10.0,
+                        vertical: 8.0,
+                      ),
                       child: Text(
                         'You have referred 0 friends',
                         style: TextStyle(
@@ -93,7 +99,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                     const Spacer(),
                     Padding(
-                      padding: const EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10.0
+                      ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: const <Widget>[
@@ -125,7 +133,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget _pointsContainer(Size size) {
     return Container(
-      height: size.height * 0.095,
+      height: size.height * 0.08,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.0),
         color: kCardColor,
@@ -185,7 +193,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget _levelsContainer(Size size) {
     return Container(
-      height: size.height * 0.15,
+      height: size.height * 0.12,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.0),
         color: kCardColor,
@@ -255,16 +263,35 @@ class _HomePageState extends State<HomePage> {
 
   //TODO: Complete this container
   Widget _copyReferralContainer() {
-    return Row(
-      children: const [
-        TextField(
-          decoration: InputDecoration(
-            border: OutlineInputBorder(),
-            labelText: 'iwndx',
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Row(
+        children: [
+          Expanded(
+            child: SizedBox(
+              height: 40.0,
+              child: TextField(
+                // controller: _referralTextController,
+                readOnly: true,
+                decoration: InputDecoration(
+                  enabled: false,
+                  hintText: 'https://www.gameball.co/ulgG3',
+                  contentPadding: const EdgeInsets.symmetric(
+                    vertical: 10.0,
+                    horizontal: 5.0,
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+              ),
+            ),
           ),
-        ),
-        CopyButton(),
-      ],
+          const CopyButton(
+            height: 40.0,
+          ),
+        ],
+      ),
     );
   }
 }
