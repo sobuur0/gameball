@@ -99,15 +99,13 @@ class _ReferralPageState extends State<ReferralPage> {
               child: Column(
                 children: <Widget>[
                   _buildColumn(
-                    whoGets: 'You get',
-                    icon: Icons.score,
-                    bonus: '50 Score | 10 Points (10 EGP)'
-                  ),
+                      whoGets: 'You get',
+                      icon: Icons.score,
+                      bonus: '50 Score | 10 Points (10 EGP)'),
                   _buildColumn(
-                    whoGets: 'They get',
-                    icon: Icons.redeem,
-                    bonus: 'Discount coupon (10%)'
-                  ),
+                      whoGets: 'They get',
+                      icon: Icons.redeem,
+                      bonus: 'Discount coupon (10%)'),
                   const Spacer(),
                   Container(
                     padding: const EdgeInsets.symmetric(
@@ -200,7 +198,9 @@ class _ReferralPageState extends State<ReferralPage> {
               Icon(
                 icon,
               ),
-              const SizedBox(width: 3.0,),
+              const SizedBox(
+                width: 3.0,
+              ),
               Text(
                 whoGets,
               ),

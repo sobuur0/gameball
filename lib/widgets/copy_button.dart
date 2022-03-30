@@ -4,11 +4,8 @@ class CopyButton extends StatefulWidget {
   final double height;
   final double width;
 
-  const CopyButton({
-    required this.height,
-    required this.width,
-    Key? key
-  }) : super(key: key);
+  const CopyButton({required this.height, required this.width, Key? key})
+      : super(key: key);
 
   @override
   _CopyButtonState createState() => _CopyButtonState();
