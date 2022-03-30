@@ -98,8 +98,16 @@ class _ReferralPageState extends State<ReferralPage> {
               ),
               child: Column(
                 children: <Widget>[
-                  _buildColumn(),
-                  _buildColumn(),
+                  _buildColumn(
+                    whoGets: 'You get',
+                    icon: Icons.score,
+                    bonus: '50 Score | 10 Points (10 EGP)'
+                  ),
+                  _buildColumn(
+                    whoGets: 'They get',
+                    icon: Icons.redeem,
+                    bonus: 'Discount coupon (10%)'
+                  ),
                   const Spacer(),
                   Container(
                     padding: const EdgeInsets.symmetric(
@@ -108,6 +116,10 @@ class _ReferralPageState extends State<ReferralPage> {
                     height: 90.0,
                     decoration: const BoxDecoration(
                       color: Colors.tealAccent,
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(11.0),
+                        bottomRight: Radius.circular(11.0),
+                      ),
                     ),
                     child: Column(
                       children: <Widget>[
@@ -173,29 +185,34 @@ class _ReferralPageState extends State<ReferralPage> {
     );
   }
 
-  Widget _buildColumn() {
+  Widget _buildColumn({
+    required IconData icon,
+    required String whoGets,
+    required String bonus,
+  }) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Row(
-            children: const <Widget>[
+            children: <Widget>[
               Icon(
-                Icons.score,
+                icon,
               ),
+              const SizedBox(width: 3.0,),
               Text(
-                'You get',
+                whoGets,
               ),
             ],
           ),
-          const Padding(
-            padding: EdgeInsets.only(
-              left: 24.0,
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 27.0,
             ),
             child: Text(
-              '50 Score | 10 Points (10 EGP)',
-              style: TextStyle(
+              bonus,
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16.0,
               ),
