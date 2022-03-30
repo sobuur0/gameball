@@ -102,6 +102,8 @@ class _HomePageState extends State<HomePage> {
                     ),
                     const CopyReferralContainer(
                       textFieldHeight: 40.0,
+                      copyButtonHeight: 40.0,
+                      copyButtonWidth: 60.0,
                     ),
                     const Padding(
                       padding: EdgeInsets.symmetric(

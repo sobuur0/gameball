@@ -3,10 +3,14 @@ import 'package:gameball/widgets/copy_button.dart';
 
 class CopyReferralContainer extends StatelessWidget {
   final double textFieldHeight;
+  final double copyButtonHeight;
+  final double copyButtonWidth;
 
   const CopyReferralContainer({
     required this.textFieldHeight,
-    Key? key
+    required this.copyButtonHeight,
+    required this.copyButtonWidth,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -35,9 +39,9 @@ class CopyReferralContainer extends StatelessWidget {
               ),
             ),
           ),
-          const CopyButton(
-            height: 40.0,
-            width: 60.0,
+          CopyButton(
+            height: copyButtonHeight,
+            width: copyButtonWidth,
           ),
         ],
       ),
