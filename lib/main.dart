@@ -17,6 +17,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          color: kAppBarColor,
+        ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(
             fixedSize: MaterialStateProperty.all<Size>(kElevatedButtonSize),

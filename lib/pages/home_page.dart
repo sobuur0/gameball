@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gameball/constants.dart';
+import 'package:gameball/pages/referral_page.dart';
 import 'package:gameball/widgets/action_widget.dart';
-import 'package:gameball/widgets/copy_button.dart';
+import 'package:gameball/widgets/copy_referral_container.dart';
 import 'package:gameball/widgets/dashboard_card.dart';
 import 'package:gameball/widgets/referral_bonus.dart';
 import 'package:percent_indicator/percent_indicator.dart';
@@ -15,6 +16,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   double value = 1090.0;
+
   // late TextEditingController _referralTextController;
 
   @override
@@ -67,9 +69,19 @@ class _HomePageState extends State<HomePage> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          Icon(
-                            Icons.chevron_right,
-                            color: Colors.yellow.shade700,
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const ReferralPage(),
+                                ),
+                              );
+                            },
+                            child: Icon(
+                              Icons.chevron_right,
+                              color: Colors.yellow.shade700,
+                            ),
                           ),
                         ],
                       ),
@@ -78,13 +90,21 @@ class _HomePageState extends State<HomePage> {
                       owner: 'You get',
                       bonus: ' \$20 Coupon',
                     ),
-                    const SizedBox(height: 5.0,),
+                    const SizedBox(
+                      height: 5.0,
+                    ),
                     const ReferralBonus(
                       owner: 'They get',
                       bonus: ' Free Shipping Coupon',
                     ),
-                    const SizedBox(height: 8.0,),
-                    _copyReferralContainer(),
+                    const SizedBox(
+                      height: 8.0,
+                    ),
+                    const CopyReferralContainer(
+                      textFieldHeight: 40.0,
+                      copyButtonHeight: 40.0,
+                      copyButtonWidth: 60.0,
+                    ),
                     const Padding(
                       padding: EdgeInsets.symmetric(
                         horizontal: 10.0,
@@ -99,9 +119,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     const Spacer(),
                     Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 10.0
-                      ),
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: const <Widget>[
@@ -257,40 +275,6 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  //TODO: Complete this container
-  Widget _copyReferralContainer() {
-    return Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: Row(
-        children: [
-          Expanded(
-            child: SizedBox(
-              height: 40.0,
-              child: TextField(
-                // controller: _referralTextController,
-                readOnly: true,
-                decoration: InputDecoration(
-                  enabled: false,
-                  hintText: 'https://www.gameball.co/ulgG3',
-                  contentPadding: const EdgeInsets.symmetric(
-                    vertical: 10.0,
-                    horizontal: 5.0,
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          const CopyButton(
-            height: 40.0,
-          ),
-        ],
       ),
     );
   }

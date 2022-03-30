@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gameball/constants.dart';
 
 class ReferralBonus extends StatelessWidget {
   final String owner;
