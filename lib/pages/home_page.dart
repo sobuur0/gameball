@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gameball/constants.dart';
 import 'package:gameball/pages/referral_page.dart';
 import 'package:gameball/widgets/action_widget.dart';
-import 'package:gameball/widgets/copy_button.dart';
+import 'package:gameball/widgets/copy_referral_container.dart';
 import 'package:gameball/widgets/dashboard_card.dart';
 import 'package:gameball/widgets/referral_bonus.dart';
 import 'package:percent_indicator/percent_indicator.dart';
@@ -100,7 +100,9 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(
                       height: 8.0,
                     ),
-                    _copyReferralContainer(),
+                    const CopyReferralContainer(
+                      textFieldHeight: 40.0,
+                    ),
                     const Padding(
                       padding: EdgeInsets.symmetric(
                         horizontal: 10.0,
@@ -271,39 +273,6 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _copyReferralContainer() {
-    return Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: Row(
-        children: [
-          Expanded(
-            child: SizedBox(
-              height: 40.0,
-              child: TextField(
-                // controller: _referralTextController,
-                readOnly: true,
-                decoration: InputDecoration(
-                  enabled: false,
-                  hintText: 'https://www.gameball.co/ulgG3',
-                  contentPadding: const EdgeInsets.symmetric(
-                    vertical: 10.0,
-                    horizontal: 5.0,
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          const CopyButton(
-            height: 40.0,
-          ),
-        ],
       ),
     );
   }

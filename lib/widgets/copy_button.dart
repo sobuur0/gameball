@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 
 class CopyButton extends StatefulWidget {
   final double height;
+  final double width;
 
   const CopyButton({
     required this.height,
+    required this.width,
     Key? key
   }) : super(key: key);
 
@@ -17,7 +19,7 @@ class _CopyButtonState extends State<CopyButton> {
   Widget build(BuildContext context) {
     return Container(
       height: widget.height,
-      width: 60.0,
+      width: widget.width,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8.0),
         color: const Color(0xFFEDC143),
