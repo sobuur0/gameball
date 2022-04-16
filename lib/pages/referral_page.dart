@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:gameball/widgets/copy_referral_container.dart';
 import 'package:gameball/widgets/referral_stages.dart';
 
@@ -10,6 +11,20 @@ class ReferralPage extends StatefulWidget {
 }
 
 class _ReferralPageState extends State<ReferralPage> {
+  late TextEditingController _referralText;
+
+  @override
+  void initState() {
+    _referralText = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _referralText.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -152,12 +167,18 @@ class _ReferralPageState extends State<ReferralPage> {
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(
+          Padding(
+            padding: const EdgeInsets.symmetric(
               horizontal: 10.0,
               vertical: 15.0,
             ),
             child: CopyReferralContainer(
+              onTap: () {
+                Clipboard.setData(
+                  ClipboardData(text: _referralText.text),
+                );
+              },
+              controller: _referralText,
               textFieldHeight: 40.0,
               copyButtonHeight: 40.0,
               copyButtonWidth: 80.0,

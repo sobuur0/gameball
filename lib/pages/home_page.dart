@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:gameball/constants.dart';
 import 'package:gameball/pages/referral_page.dart';
 import 'package:gameball/widgets/action_widget.dart';
@@ -17,7 +18,19 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   double value = 1090.0;
 
-  // late TextEditingController _referralTextController;
+  late TextEditingController _referralTextController;
+
+  @override
+  void initState() {
+    _referralTextController = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _referralTextController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -104,7 +117,13 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(
                       height: 8.0,
                     ),
-                    const CopyReferralContainer(
+                    CopyReferralContainer(
+                      onTap: () {
+                        Clipboard.setData(
+                          ClipboardData(text: _referralTextController.text),
+                        );
+                      },
+                      controller: _referralTextController,
                       textFieldHeight: 40.0,
                       copyButtonHeight: 40.0,
                       copyButtonWidth: 60.0,

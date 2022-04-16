@@ -5,11 +5,15 @@ class CopyReferralContainer extends StatelessWidget {
   final double textFieldHeight;
   final double copyButtonHeight;
   final double copyButtonWidth;
+  final VoidCallback onTap;
+  final TextEditingController controller;
 
   const CopyReferralContainer({
     required this.textFieldHeight,
     required this.copyButtonHeight,
     required this.copyButtonWidth,
+    required this.onTap,
+    required this.controller,
     Key? key,
   }) : super(key: key);
 
@@ -23,7 +27,7 @@ class CopyReferralContainer extends StatelessWidget {
             child: SizedBox(
               height: textFieldHeight,
               child: TextField(
-                // controller: _referralTextController,
+                controller: controller,
                 readOnly: true,
                 decoration: InputDecoration(
                   enabled: false,
@@ -40,6 +44,7 @@ class CopyReferralContainer extends StatelessWidget {
             ),
           ),
           CopyButton(
+            onTap: onTap,
             height: copyButtonHeight,
             width: copyButtonWidth,
           ),
