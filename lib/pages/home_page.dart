@@ -29,7 +29,11 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             Stack(
               children: <Widget>[
-                const DashBoardCard(),
+                DashBoardCard(
+                  onCancel: () {
+                    Navigator.pop(context);
+                  },
+                ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20.0, 130.0, 20.0, 0),
                   child: _pointsContainer(size),
