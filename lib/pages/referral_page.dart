@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gameball/widgets/copy_referral_container.dart';
 import 'package:gameball/widgets/referral_stages.dart';
