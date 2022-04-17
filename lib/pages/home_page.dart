@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:gameball/constants.dart';
 import 'package:gameball/pages/referral_page.dart';
 import 'package:gameball/widgets/action_widget.dart';
@@ -17,7 +18,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   double value = 1090.0;
 
-  // late TextEditingController _referralTextController;
+  final TextEditingController _referralTextController =
+      TextEditingController(text: 'https://www.gameball.co/ulgG3');
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,11 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             Stack(
               children: <Widget>[
-                const DashBoardCard(),
+                DashBoardCard(
+                  onCancel: () {
+                    Navigator.pop(context);
+                  },
+                ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20.0, 130.0, 20.0, 0),
                   child: _pointsContainer(size),
@@ -100,7 +106,20 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(
                       height: 8.0,
                     ),
-                    const CopyReferralContainer(
+                    CopyReferralContainer(
+                      onTap: () {
+                        Clipboard.setData(
+                          ClipboardData(text: _referralTextController.text),
+                        ).then(
+                          (value) => ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text(
+                                  'Your referral code was successfully copied'),
+                            ),
+                          ),
+                        );
+                      },
+                      controller: _referralTextController,
                       textFieldHeight: 40.0,
                       copyButtonHeight: 40.0,
                       copyButtonWidth: 60.0,

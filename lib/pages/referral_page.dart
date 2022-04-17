@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:gameball/widgets/copy_referral_container.dart';
 import 'package:gameball/widgets/referral_stages.dart';
 
@@ -11,6 +11,8 @@ class ReferralPage extends StatefulWidget {
 }
 
 class _ReferralPageState extends State<ReferralPage> {
+final TextEditingController _referralText = TextEditingController(text: 'https://www.gameball.co/ulgG3');
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -153,12 +155,25 @@ class _ReferralPageState extends State<ReferralPage> {
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(
+          Padding(
+            padding: const EdgeInsets.symmetric(
               horizontal: 10.0,
               vertical: 15.0,
             ),
             child: CopyReferralContainer(
+              onTap: () {
+                Clipboard.setData(
+                  ClipboardData(text: _referralText.text),
+                ).then(
+                  (value) => ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content:
+                          Text('Your referral code was successfully copied'),
+                    ),
+                  ),
+                );
+              },
+              controller: _referralText,
               textFieldHeight: 40.0,
               copyButtonHeight: 40.0,
               copyButtonWidth: 80.0,
