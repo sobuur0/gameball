@@ -27,11 +27,9 @@ class CopyReferralContainer extends StatelessWidget {
             child: SizedBox(
               height: textFieldHeight,
               child: TextField(
-                controller: controller,
                 readOnly: true,
+                controller: controller,
                 decoration: InputDecoration(
-                  enabled: false,
-                  hintText: 'https://www.gameball.co/ulgG3',
                   contentPadding: const EdgeInsets.symmetric(
                     vertical: 10.0,
                     horizontal: 5.0,

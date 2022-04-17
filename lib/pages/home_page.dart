@@ -18,19 +18,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   double value = 1090.0;
 
-  late TextEditingController _referralTextController;
-
-  @override
-  void initState() {
-    _referralTextController = TextEditingController();
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _referralTextController.dispose();
-    super.dispose();
-  }
+  final TextEditingController _referralTextController =
+      TextEditingController(text: 'https://www.gameball.co/ulgG3');
 
   @override
   Widget build(BuildContext context) {
@@ -121,6 +110,13 @@ class _HomePageState extends State<HomePage> {
                       onTap: () {
                         Clipboard.setData(
                           ClipboardData(text: _referralTextController.text),
+                        ).then(
+                          (value) => ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text(
+                                  'Your referral code was successfully copied'),
+                            ),
+                          ),
                         );
                       },
                       controller: _referralTextController,

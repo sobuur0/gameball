@@ -19,7 +19,7 @@ class CopyButton extends StatefulWidget {
 class _CopyButtonState extends State<CopyButton> {
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: widget.onTap!,
       child: Container(
         height: widget.height,
