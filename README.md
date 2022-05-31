@@ -1,5 +1,5 @@
 # Gameball
-Based on https://dribbble.com/noohelhadedy\'s gameball version 3 referral and reward pages
+Based on https://dribbble.com/noohelhadedy gameball version 3 referral and reward pages
 
 Screenshots:
 
