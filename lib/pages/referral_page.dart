@@ -11,7 +11,8 @@ class ReferralPage extends StatefulWidget {
 }
 
 class _ReferralPageState extends State<ReferralPage> {
-final TextEditingController _referralText = TextEditingController(text: 'https://www.gameball.co/ulgG3');
+  final TextEditingController _referralText =
+      TextEditingController(text: 'https://www.gameball.co/ulgG3');
 
   @override
   Widget build(BuildContext context) {
